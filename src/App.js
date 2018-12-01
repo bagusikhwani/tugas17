@@ -6,7 +6,9 @@ import Home from './container/Home';
 import Kajian from './container/Kajian';
 import Kitab from './container/Kitab';
 import Mondok from './container/Mondok';
+import NotFound from './container/NotFound';
 
+import {Route, Switch} from 'react-router-dom';
 
 
 class App extends Component {
@@ -23,8 +25,15 @@ class App extends Component {
   render() {
    return(
      <div>
-       <Header ChangePage={this.handleChangePage}/>
-       {this.state.page == "Home" ? (<Home/>) : this.state.page == "Kajian" ? (<Kajian/>) : this.state.page == "Kitab" ? (<Kitab/>) : this.state.page == "Mondok" ? (<Mondok/>) : (<h1>Page Not Found</h1>)}
+       <Header/>
+
+       <Switch>
+          <Route path="/" exact component={Home}/>
+          <Route path="/kajian" component={Kajian}/>
+          <Route path="/kitab" component={Kitab}/>
+          <Route path="/mondok" component={Mondok}/>
+          <Route component={NotFound}/>
+       </Switch>
      </div>
    )
   }

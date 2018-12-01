@@ -9,7 +9,9 @@ import {
   NavLink,
   Button } from 'reactstrap';
 
-  import Logo from '../assets/santrenkoding_logo.png';
+import Logo from '../assets/santrenkoding_logo.png';
+
+import {Link} from 'react-router-dom';
 
 export default class Example extends React.Component {
   constructor(props) {
@@ -30,22 +32,32 @@ export default class Example extends React.Component {
       <div>
         <Navbar color="light" light expand="md">
             <NavbarBrand href="/"><img style={{width:30}} src={Logo}/></NavbarBrand>
-            <NavbarBrand onClick={()=>this.props.ChangePage("Home")}>Santren Koding</NavbarBrand>
+            <Link to="/">
+            <NavbarBrand>Santren Koding</NavbarBrand>
+            </Link>
 
             <NavbarToggler onClick={this.toggle} />
             <Collapse isOpen={this.state.isOpen} navbar>
                 <Nav className="ml-auto" navbar>
                 <NavItem>
-                    <NavLink onClick={()=>this.props.ChangePage("Kajian")}>Kajian Koding</NavLink>
+                    <Link to="/kajian">
+                    <NavLink>Kajian Koding</NavLink>
+                    </Link>
                 </NavItem>
                 <NavItem>
-                    <NavLink onClick={()=>this.props.ChangePage("Mondok")}>Mondok Koding</NavLink>
+                  <Link to="/mondok">
+                  <NavLink>Mondok Koding</NavLink>
+                  </Link>  
                 </NavItem>
                 <NavItem>
-                    <NavLink onClick={()=>this.props.ChangePage("Kitab")}>Kitab Koding</NavLink>
+                  <Link to="/kitab">
+                    <NavLink>Kitab Koding</NavLink>
+                  </Link>
                 </NavItem>
                 <NavItem>
-                    <Button className="bg-success">Masuk / Daftar</Button>
+                    <Link to="/login">
+                     <Button className="bg-success">Masuk / Daftar</Button>
+                    </Link>
                 </NavItem>
                 </Nav>
             </Collapse>
