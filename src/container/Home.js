@@ -10,7 +10,6 @@ export default class Home extends Component{
     render(){
         return(
             <div className="bg-light">
-                <Header />
                 <Jumbotron />
                 <div className="text-center m-4">
                     <h2>Daftar Kajian Rutin</h2>

@@ -30,19 +30,19 @@ export default class Example extends React.Component {
       <div>
         <Navbar color="light" light expand="md">
             <NavbarBrand href="/"><img style={{width:30}} src={Logo}/></NavbarBrand>
-            <NavbarBrand href="/">Santren Koding</NavbarBrand>
+            <NavbarBrand onClick={()=>this.props.ChangePage("Home")}>Santren Koding</NavbarBrand>
 
             <NavbarToggler onClick={this.toggle} />
             <Collapse isOpen={this.state.isOpen} navbar>
                 <Nav className="ml-auto" navbar>
                 <NavItem>
-                    <NavLink href="/">Kajian Koding</NavLink>
+                    <NavLink onClick={()=>this.props.ChangePage("Kajian")}>Kajian Koding</NavLink>
                 </NavItem>
                 <NavItem>
-                    <NavLink href="/">Mondok Koding</NavLink>
+                    <NavLink onClick={()=>this.props.ChangePage("Mondok")}>Mondok Koding</NavLink>
                 </NavItem>
                 <NavItem>
-                    <NavLink href="/">Kitab Koding</NavLink>
+                    <NavLink onClick={()=>this.props.ChangePage("Kitab")}>Kitab Koding</NavLink>
                 </NavItem>
                 <NavItem>
                     <Button className="bg-success">Masuk / Daftar</Button>
